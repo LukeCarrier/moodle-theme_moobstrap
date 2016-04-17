@@ -18,6 +18,9 @@ require_once "{$CFG->libdir}/outputrequirementslib.php";
  * Core renderer.
  */
 class theme_moobstrap_core_renderer extends core_renderer {
+    /**
+     * @override \core_renderer
+     */
     public function notification($message, $type=null) {
         $alert = new alert($message, bootstrap_util::notification_alert_type($type));
 

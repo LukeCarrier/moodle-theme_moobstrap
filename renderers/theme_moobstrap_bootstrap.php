@@ -30,7 +30,7 @@ class theme_moobstrap_bootstrap_renderer extends plugin_renderer_base {
     }
 
     /**
-     * Render a Bootstrap navbar component.
+     * Render a Bootstrap Navbar component.
      *
      * @param \theme_moobstrap\bootstrap\navbar $context
      *
