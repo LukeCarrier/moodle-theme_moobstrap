@@ -9,7 +9,12 @@
 
 namespace theme_moobstrap;
 
+use html_table;
 use theme_moobstrap\bootstrap\has_context;
+use theme_moobstrap\bootstrap\table;
+use theme_moobstrap\bootstrap\table_cell;
+use theme_moobstrap\bootstrap\table_row;
+use theme_moobstrap\bootstrap\table_thead;
 
 defined('MOODLE_INTERNAL') || die;
 
@@ -40,6 +45,35 @@ class bootstrap_util {
         'notifyredirect'  => has_context::CONTEXT_INFO,
         'redirectmessage' => has_context::CONTEXT_INFO,
     );
+
+    /**
+     * Convert a core table to a Bootstrap one.
+     *
+     * @param \html_table $table
+     *
+     * @return \theme_moobstrap\bootstrap\table
+     */
+    public static function html_table_to_bootstrap(html_table $oldtable) {
+        $table = new table();
+
+        $table->thead = new table_thead();
+        $row = new table_row();
+        foreach ($oldtable->head as $oldcell) {
+            $row->cells[] = new table_cell($oldcell);
+        }
+        $table->thead->rows[] = $row;
+
+        $table->tbody = array();
+        foreach ($oldtable->data as $oldrow) {
+            $row = new table_row();
+            foreach ($oldrow as $oldcell) {
+                $row->cells[] = new table_cell($oldcell);
+            }
+            $table->tbody[] = $row;
+        }
+
+        return $table;
+    }
 
     /**
      * Get the appropriate Bootstrap alert type for a notification type.

@@ -1,0 +1,27 @@
+{{#responsive}}<div class="table-responsive">{{/responsive}}
+
+<table class="table {{#bordered}}table-bordered{{/bordered}} {{#hoverable}}table-hover{{/hoverable}} {{#inverse}}table-inverse{{/inverse}} {{#reflow}}table-reflow{{/reflow}} {{#small}}table-small{{/small}} {{#striped}}table-striped{{/striped}}">
+  {{#thead}}
+    <thead {{#style}}class="thead-{{style}}"{{/style}}>
+      {{#rows}}
+        <tr>
+          {{#cells}}
+            <th>{{{value}}}</th>
+          {{/cells}}
+        </tr>
+      {{/rows}}
+    </thead>
+  {{/thead}}
+
+  <tbody>
+    {{#tbody}}
+      <tr {{#context}}class="table-{{context}}"{{/context}}>
+        {{#cells}}
+          <td {{#context}}class="table-{{context}}"{{/context}}>{{{value}}}</td>
+        {{/cells}}
+      </tr>
+    {{/tbody}}
+  </tbody>
+</table>
+
+{{#responsive}}</div>{{/responsive}}

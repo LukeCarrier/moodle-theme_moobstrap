@@ -9,6 +9,7 @@
 
 use theme_moobstrap\bootstrap\alert;
 use theme_moobstrap\bootstrap\navbar;
+use theme_moobstrap\bootstrap\table;
 
 defined('MOODLE_INTERNAL') || die;
 
@@ -38,5 +39,16 @@ class theme_moobstrap_bootstrap_renderer extends plugin_renderer_base {
      */
     protected function render_navbar(navbar $context) {
         return $this->render_from_template('theme_moobstrap/bootstrap_navbar', $context);
+    }
+
+    /**
+     * Render a Bootstrap Table component.
+     *
+     * @param \theme_moobstrap\bootstrap\table $context
+     *
+     * @return string
+     */
+    protected function render_table(table $context) {
+        return $this->render_from_template('theme_moobstrap/bootstrap_table', $context);
     }
 }
