@@ -15,7 +15,6 @@ defined('MOODLE_INTERNAL') || die;
 /** @var \core_renderer $OUTPUT */
 /** @var \moodle_page $PAGE */
 
-/** @var \theme_moobstrap_bootstrap_renderer $bootstraprenderer */
 $bootstraprenderer = $PAGE->get_renderer('theme_moobstrap', 'bootstrap');
 
 ?>
@@ -44,9 +43,13 @@ $bootstraprenderer = $PAGE->get_renderer('theme_moobstrap', 'bootstrap');
             echo $bootstraprenderer->render($navbar);
         ?>
 
-        <?php echo $OUTPUT->course_content_header(); ?>
-        <?php echo $OUTPUT->main_content(); ?>
-        <?php echo $OUTPUT->course_content_footer(); ?>
+        <div class="container">
+            <?php echo $OUTPUT->full_header(); ?>
+
+            <?php echo $OUTPUT->course_content_header(); ?>
+            <?php echo $OUTPUT->main_content(); ?>
+            <?php echo $OUTPUT->course_content_footer(); ?>
+        </div>
 
         <?php echo $OUTPUT->standard_end_of_body_html(); ?>
 
