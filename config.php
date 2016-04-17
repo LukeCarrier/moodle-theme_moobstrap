@@ -31,6 +31,8 @@ $THEME->rendererfactory = 'theme_overridden_renderer_factory';
 $THEME->layouts = array(
     'admin'       => $layouts['base'],
     'base'        => $layouts['base'],
+    'frontpage'   => $layouts['base'],
+    'login'       => $layouts['base'],
     'mydashboard' => $layouts['base'],
 );
 
