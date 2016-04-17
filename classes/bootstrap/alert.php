@@ -16,35 +16,7 @@ defined('MOODLE_INTERNAL') || die;
 /**
  * Bootstrap Alert component.
  */
-class alert implements renderable {
-    /**
-     * Type: success.
-     *
-     * @var string
-     */
-    const TYPE_SUCCESS = 'success';
-
-    /**
-     * Type: info.
-     *
-     * @var string
-     */
-    const TYPE_INFO = 'info';
-
-    /**
-     * Type: warning.
-     *
-     * @var string
-     */
-    const TYPE_WARNING = 'warning';
-
-    /**
-     * Type: danger.
-     *
-     * @var string
-     */
-    const TYPE_DANGER = 'danger';
-
+class alert implements has_context, renderable {
     /**
      * Message contents.
      *
@@ -53,11 +25,11 @@ class alert implements renderable {
     public $message;
 
     /**
-     * Type.
+     * Context.
      *
-     * @var string
+     * @var string One of the has_context::CONTEXT_* values.
      */
-    public $type;
+    public $context;
 
     /**
      * Dismissable?
@@ -70,12 +42,12 @@ class alert implements renderable {
      * Initialiser.
      *
      * @param string  $message
-     * @param string  $type
+     * @param string  $context
      * @param boolean $dismissable
      */
-    public function __construct($message, $type=null, $dismissable=null) {
+    public function __construct($message, $context=null, $dismissable=null) {
         $this->message     = $message;
-        $this->type        = $type;
+        $this->type        = $context;
         $this->dismissable = $dismissable;
     }
 }

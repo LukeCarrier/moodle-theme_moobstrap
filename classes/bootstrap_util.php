@@ -9,7 +9,7 @@
 
 namespace theme_moobstrap;
 
-use theme_moobstrap\bootstrap\alert;
+use theme_moobstrap\bootstrap\has_context;
 
 defined('MOODLE_INTERNAL') || die;
 
@@ -24,21 +24,21 @@ class bootstrap_util {
      *
      * @var string[]
      */
-    protected static $NOTIFICATION_ALERT_MAP = array(
+    protected static $NOTIFICATION_CONTEXT_MAP = array(
         // Modern types.
-        'success' => alert::TYPE_SUCCESS,
-        'info'    => alert::TYPE_INFO,
-        'warning' => alert::TYPE_WARNING,
-        'error'   => alert::TYPE_DANGER,
+        'success' => has_context::CONTEXT_SUCCESS,
+        'info'    => has_context::CONTEXT_INFO,
+        'warning' => has_context::CONTEXT_WARNING,
+        'error'   => has_context::CONTEXT_DANGER,
 
         // Legacy types (mapped to modern equivalents).
-        'notifyproblem'   => alert::TYPE_DANGER,
-        'notifytiny'      => alert::TYPE_DANGER,
-        'notifyerror'     => alert::TYPE_DANGER,
-        'notifysuccess'   => alert::TYPE_SUCCESS,
-        'notifymessage'   => alert::TYPE_INFO,
-        'notifyredirect'  => alert::TYPE_INFO,
-        'redirectmessage' => alert::TYPE_INFO,
+        'notifyproblem'   => has_context::CONTEXT_DANGER,
+        'notifytiny'      => has_context::CONTEXT_DANGER,
+        'notifyerror'     => has_context::CONTEXT_DANGER,
+        'notifysuccess'   => has_context::CONTEXT_SUCCESS,
+        'notifymessage'   => has_context::CONTEXT_INFO,
+        'notifyredirect'  => has_context::CONTEXT_INFO,
+        'redirectmessage' => has_context::CONTEXT_INFO,
     );
 
     /**
@@ -46,9 +46,9 @@ class bootstrap_util {
      *
      * @param string $type
      *
-     * @return string One of the alert::TYPE_* values.
+     * @return string One of the has_context::CONTEXT_* values.
      */
     public static function notification_alert_type($type) {
-        return static::$NOTIFICATION_ALERT_MAP[$type];
+        return static::$NOTIFICATION_CONTEXT_MAP[$type];
     }
 }
