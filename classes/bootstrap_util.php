@@ -1,9 +1,21 @@
 <?php
 
+/**
+ * Moobstrap - Bootstrap base theme for Moodle.
+ *
+ * @author Luke Carrier <luke@carrier.im>
+ * @copyright 2016 Luke Carrier
+ */
+
 namespace theme_moobstrap;
 
 use theme_moobstrap\bootstrap\alert;
 
+defined('MOODLE_INTERNAL') || die;
+
+/**
+ * Bootstrap-related utility methods.
+ */
 class bootstrap_util {
     /**
      * Map of Moodle notification types to Bootstrap alert types.
