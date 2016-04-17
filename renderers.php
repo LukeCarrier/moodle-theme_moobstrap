@@ -10,7 +10,9 @@
 defined('MOODLE_INTERNAL') || die;
 
 $renderers = array(
-    'bootstrap',
+    'core',
+    'core_admin',
+    'theme_moobstrap_bootstrap',
 );
 
 foreach ($renderers as $renderer) {

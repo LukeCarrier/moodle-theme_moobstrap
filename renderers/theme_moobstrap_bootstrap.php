@@ -7,6 +7,7 @@
  * @copyright 2016 Luke Carrier
  */
 
+use theme_moobstrap\bootstrap\alert;
 use theme_moobstrap\bootstrap\navbar;
 
 defined('MOODLE_INTERNAL') || die;
@@ -18,7 +19,18 @@ defined('MOODLE_INTERNAL') || die;
  */
 class theme_moobstrap_bootstrap_renderer extends plugin_renderer_base {
     /**
-     * Render a Bootstrap navbar.
+     * Render a Bootstrap Alert component.
+     *
+     * @param \theme_moobstrap\bootstrap\alert $context
+     *
+     * @return string
+     */
+    public function render_alert(alert $context) {
+        return $this->render_from_template('theme_moobstrap/bootstrap_alert', $context);
+    }
+
+    /**
+     * Render a Bootstrap navbar component.
      *
      * @param \theme_moobstrap\bootstrap\navbar $context
      *

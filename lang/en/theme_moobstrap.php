@@ -16,3 +16,6 @@ $string['pluginname'] = 'Moobstrap';
 
 // Theme metadata
 $string['choosereadme'] = 'Bootstrap base theme for Moodle.';
+
+// Bootstrap template labels
+$string['bootstrap_close'] = 'Close';
