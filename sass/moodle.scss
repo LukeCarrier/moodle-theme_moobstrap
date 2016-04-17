@@ -8,5 +8,9 @@
 // Base Bootstrap CSS
 @import "../node_modules/bootstrap/scss/bootstrap";
 
+// Moodle-isms
+@import "./isms/moodle";
+@import "./isms/yui3";
+
 // Our global styles
 @import "./style";
