@@ -3,4 +3,5 @@
 /npm-*.log
 
 # Build artefacts
+/amd/
 /style/
