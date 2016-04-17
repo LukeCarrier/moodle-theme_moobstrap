@@ -1,0 +1,25 @@
+<nav role="navigation" class="navbar {{classes}}">
+    {{#brand}}
+        <a class="navbar-brand" href="{{url}}">
+            {{name}}
+        </a>
+    {{/brand}}
+
+    {{#collapsible}}
+        <button class="navbar-toggler pull-xs-right hidden-sm-up" type="button" data-toggle="collapse" data-target="#{{id}}">
+            ☰
+        </button>
+    {{/collapsible}}
+
+    {{#collapsible}}<div class="collapse navbar-toggleable-xs" id="{{id}}">{{/collapsible}}
+    <ul class="nav navbar-nav">
+        {{#items}}
+            <li class="nav-item {{#active}}active{{/active}}">
+                <a class="nav-link" href="{{url}}">
+                    {{name}}
+                </a>
+            </li>
+        {{/items}}
+    </ul>
+    {{#collapsible}}</div>{{/collapsible}}
+</nav>
