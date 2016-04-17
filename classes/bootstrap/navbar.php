@@ -14,7 +14,7 @@ use renderable;
 defined('MOODLE_INTERNAL') || die;
 
 /**
- * Bootstrap navbar.
+ * Bootstrap Navbar component.
  */
 class navbar implements renderable {
     /**
