@@ -21,6 +21,45 @@ class theme_moobstrap_core_renderer extends core_renderer {
     /**
      * @override \core_renderer
      */
+    public function block(block_contents $contents, $region) {
+        $contents->add_class('card');
+
+        return parent::block($contents, $region);
+    }
+
+    /**
+     * @override \core_renderer
+     */
+    protected function block_header(block_contents $bc) {
+        $title = '';
+
+        if ($bc->title) {
+            $attributes = array(
+                'class' => 'card-title',
+            );
+            if ($bc->blockinstanceid) {
+                $attributes['id'] = "instance-{$bc->blockinstanceid}-header";
+            }
+            $title = html_writer::tag('h2', $bc->title, $attributes);
+        }
+
+        $blockid = array_key_exists('id', $bc->attributes)
+                ? $bc->attributes['id'] : null;
+        $controls = $this->block_controls($bc->controls, $blockid);
+
+        if (!$title && !$controls) {
+            return '';
+        }
+
+        return html_writer::start_tag('div', array('class' => 'card-block'))
+             .     $title
+             .     $controls
+             . html_writer::end_tag('div');
+    }
+
+    /**
+     * @override \core_renderer
+     */
     public function notification($message, $type=null) {
         $alert = new alert($message, bootstrap_util::notification_alert_type($type));
 

@@ -1,0 +1,32 @@
+/**
+ * Moobstrap - Bootstrap base theme for Moodle.
+ *
+ * @author Luke Carrier <luke@carrier.im>
+ * @copyright 2016 Luke Carrier
+ */
+
+.moodle-actionmenu {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    &.menubar li {
+      display: inline;
+      padding: 3px;
+    }
+  }
+
+  .menu {
+    display: none;
+    visibility: hidden;
+
+    background: #fff;
+    border: 1px solid #ccc;
+  }
+
+  &.show .menu {
+    display: inherit;
+    visibility: inherit;
+  }
+}
