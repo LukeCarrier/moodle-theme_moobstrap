@@ -14,6 +14,14 @@ $layouts = array(
         'file'    => 'base.php',
         'regions' => array(),
     ),
+
+    'two-column' => array(
+        'file'          => 'two-column.php',
+        'regions'       => array(
+            'main-pre',
+        ),
+        'defaultregion' => 'main-pre',
+    ),
 );
 
 $THEME->name    = 'moobstrap';
@@ -29,11 +37,15 @@ $THEME->javascripts_footer = array();
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
 
 $THEME->layouts = array(
-    'admin'       => $layouts['base'],
-    'base'        => $layouts['base'],
-    'frontpage'   => $layouts['base'],
-    'login'       => $layouts['base'],
-    'mydashboard' => $layouts['base'],
+    // The simplest layout; used for upgrades and such where plugins may not
+    // function correctly.
+    'base'     => $layouts['base'],
+    'redirect' => $layouts['base'],
+
+    'admin'       => $layouts['two-column'],
+    'frontpage'   => $layouts['two-column'],
+    'login'       => $layouts['two-column'],
+    'mydashboard' => $layouts['two-column'],
 );
 
 $THEME->supportscssoptimisation = false;
