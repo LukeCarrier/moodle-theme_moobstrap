@@ -47,7 +47,7 @@ class alert implements has_context, renderable {
      */
     public function __construct($message, $context=null, $dismissable=null) {
         $this->message     = $message;
-        $this->type        = $context;
+        $this->context     = $context;
         $this->dismissable = $dismissable;
     }
 }
